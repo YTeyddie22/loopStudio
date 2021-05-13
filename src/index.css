@@ -1,13 +1,502 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --dark-gray: hsl(0, 0%, 55%);
+  --very-dark-gray: hsl(0, 0%, 41%)
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 15px;
+  font-family: "Alata", sans-serif;
+  color: var(--very-dark-gray);
+}
+
+button {
+  background-color: transparent;
+  font-family: "Alata", sans-serif;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/*Header*/
+.header {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+.header .menu-btn {
+  position: relative;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+
+/*Humburger menu*/
+.header .menu-btn .bar {
+  background-color: #fff;
+  width: 33px;
+  height: 3px;
+  margin: 0 0 5px;
+  
+}
+
+.header .menu-btn.rotate .bar-1 {
+  transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+}
+
+.header .menu-btn.rotate .bar-2 {
+  opacity: 0;
+}
+
+.header .menu-btn.rotate .bar-3 {
+  transform: rotate(-40deg);
+  -webkit-transform: rotate(-40deg);
+  -moz-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  margin-top: -16px;
+}
+
+.header nav {
+display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  min-height: 100vh;
+
+}
+
+
+.header nav.open {
+  display: block;
+}
+
+.header nav .nav-logo {
+  padding: 20px;
+}
+
+.header nav ul {
+  padding-top: 100px;
+  padding-left: 30px;
+}
+
+
+.header nav ul li {
+  margin-bottom: 20px;
+}
+
+.header nav ul li button {
+  text-transform: uppercase;
+  font-size: 36px;
+}
+
+
+
+/*ShowCase area*/
+.showcase {
+  background-image: url("./Images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 700px;
+}
+
+.showcase .overlay {
+  display: flex;
+  align-items: center;
+  height: 700px;
+  padding: 0 20px;
+
+}
+
+.showcase .overlay h1 {
+  line-height: 1.1;
+  color: #fff;
+  font-size: 43px;
+  border: 1px solid #fff;
+  padding: 20px;
+
+}
+
+/*Interactive area*/
+.interactive {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.interactive h2 {
+  padding: 30px 0 20px;
+}
+
+.interactive .interactive-words {
+  padding: 0 40px;
+}
+
+.interactive .interactive-words h2 {
+  padding: 30px 0 20px;
+  line-height: 1.1;
+}
+
+/*Creation Mobile*/
+
+.creation-mobile {
+  padding: 0 20px 50px;
+}
+
+.creation-mobile h2 {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+
+.creation-mobile article {
+  position: relative
+}
+
+.creation-mobile article:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+
+.creation-mobile h3 {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding: 0 0 10px 10px;
+  color: aliceblue;
+  font-size: 23px;
+  width: 145px;
+  line-height: 1.2;
+}
+
+.creation-mobile section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  place-items: center;
+}
+
+.creation-mobile .btn-container {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.creation-mobile .btn-container .btn {
+  border: 2px solid black;
+  padding: 10px 30px;
+  color: #000;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -ms-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+}
+
+.creation-mobile .btn-container .btn:hover {
+  background-color: #000;
+  color: #fff;
+
+}
+
+.creation-desktop {
+  display: none;
+
+}
+
+/*Footer*/
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer .logo img {
+  margin-bottom: 20px;
+}
+
+.footer ul {
+  margin-bottom: 25px;
+}
+
+.footer ul li {
+  margin-bottom: 20px;
+}
+
+.footer .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .social li {
+  margin-bottom: 0;
+  margin-right: 20px;
+  font-size: 24px
+}
+
+.footer .copyright {
+  font-family: "Alata", sans-serif;
+  font-size: 15px;
+  color: var(--dark-gray);
+}
+
+@media (min-width:768px) {
+  .footer {
+    text-align: initial;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer ul {
+    display: flex;
+  }
+
+  .footer ul li {
+    margin: 0 20px 0 0;
+
+  }
+
+  .footer ul li button {
+    font-size: 10px;
+  }
+
+  .footer social {
+    display: flex;
+  }
+}
+
+
+
+@media (min-width:1024px) {
+  .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px;
+  }
+
+.header .menu-btn{
+  display: none;
+}
+.header nav{
+  display: block;
+  background-color:transparent ;
+}
+.header nav .nav-logo{
+  display: none;
+}
+.header nav ul{
+  position:absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 10px;
+  right: 0;
+  padding:0;
+}
+.header nav ul li{
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+.header nav ul li button{
+  text-transform: capitalize;
+  font-size: 15px;
+}
+
+
+
+  .showcase {
+    background-image: url("./Images/desktop/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+  }
+
+  .showcase .overlay {
+    font-size: 64px;
+    width: 450px
+  }
+
+  .creation-mobile {
+    display: none;
+  }
+
+  .creation-desktop {
+    display: block;
+    padding: 50px 20px;
+    margin-top: 50px;
+  }
+
+  .creation-desktop section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .creation-desktop article {
+    position: relative
+  }
+
+  .creation-desktop article:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+
+  .creation-desktop h3 {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding: 0 0 10px 10px;
+    color: aliceblue;
+    font-size: 23px;
+    width: 145px;
+    line-height: 1.2;
+  }
+
+  .creation-desktop .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 0;
+  }
+
+  .creation-desktop .btn-container {
+    text-align: center;
+
+  }
+
+  .creation-desktop .btn-container .btn {
+    border: 2px solid black;
+    padding: 10px 30px;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    -ms-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
+  }
+
+  .creation-desktop .btn-container .btn:hover {
+    background-color: #000;
+    color: #fff;
+
+  }
+
+  .interactive {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .interactive-words {
+    position: absolute;
+    width: 600px;
+    right: 0;
+    bottom: 50px;
+    padding: 50px;
+    background-color: #fff;
+  }
+}
+
+@media (min-width:1280px) {
+  .header{
+    padding-left: 250px;
+  }
+  .header nav ul{
+    right: 250px;
+  }
+  .interactive{
+    padding:50px 250px;
+  }
+  .interactive-words {
+    width: 800px;
+    right: 150px;
+  }
+
+  .showcase .overlay{
+    padding: 0;
+  }
+  .showcase .overlay h1{
+    margin-left: 250px;
+  }
+
+  .creation-desktop title {
+    max-width: 1100px;
+  }
+
+  .creation-desktop section {
+    max-width: 1100px;
+  }
+
+  .footer {
+    padding: 50px 250px
+  }
 }
