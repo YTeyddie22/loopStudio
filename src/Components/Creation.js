@@ -3,7 +3,7 @@
 import React from 'react';
 import data from '../mobile_images';
 function Creation() {
-	const [cards, setCards] = React.useState(data);
+	const [cards] = React.useState(data);
 	return (
 		<section className='creation-mobile'>
 			<h2>Our Creations</h2>
