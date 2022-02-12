@@ -1,7 +1,7 @@
 import React from 'react';
 import data from '../desktop-images';
 function CreationDesktop() {
-	const [cards, setCards] = React.useState(data);
+	const [cards] = React.useState(data);
 	return (
 		<section className='creation-desktop'>
 			<div className='title'>
