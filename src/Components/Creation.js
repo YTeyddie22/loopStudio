@@ -1,3 +1,5 @@
+/* eslint no-use-before-define: 0 */
+
 import React from 'react';
 import data from '../mobile_images';
 function Creation() {
